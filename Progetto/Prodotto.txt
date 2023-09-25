@@ -1,0 +1,4 @@
+pane;3.5;20
+pasta;1.6;45
+Biscotti;4.70;80
+Salame;35;37
