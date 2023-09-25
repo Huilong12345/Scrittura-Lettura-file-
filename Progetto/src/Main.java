@@ -9,8 +9,11 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			FileWriter fw = new FileWriter ("Prodotto.txt");
-			fw.write("pane\n");
+			FileWriter fw = new FileWriter ("Prodotto.csv");
+			fw.write("pane;3.5;20\n");
+			fw.write("pasta;1.6;45\n");
+			fw.write("Biscotti;4.70;80\n");
+			fw.write("Salame;35;37\n");
 			fw.close();
 			System.out.println("file creato");
 			
@@ -19,15 +22,22 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		File f=new File("prodotto.txt");
+		File f=new File("prodotto.csv");
 		
 		try {
 			Scanner sc= new Scanner(f);
 			String riga;
+			String[] dati;
 			while (sc.hasNextLine()) {
 				riga=sc.nextLine();
-				System.out.println("file trovato:"+riga);
+				dati=riga.split(";");
+				System.out.println("prodotto trovato:");
+				System.out.println("Nome:"+dati[0]);
+				System.out.println("Prezzo:"+dati[1]);
+				System.out.println("Quantità:"+dati[2]);
+				System.out.println("\n");
 			}
+			System.out.println("\n\n\n\nFile trovato");
 			sc.close();
 		} catch (FileNotFoundException e) {
 			
